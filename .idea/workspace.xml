@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97fb0ff1-560e-44e3-851b-3286eaa96a8e" name="Changes" comment="BBBBB">
+    <list default="true" id="97fb0ff1-560e-44e3-851b-3286eaa96a8e" name="Changes" comment="create-drop temp">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/iktproject/model/Material.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iktproject/model/Material.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/iktproject/model/Material.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/iktproject/model/Material.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +97,7 @@
       <option name="presentableId" value="Default" />
       <updated>1747591315584</updated>
       <workItem from="1747591316787" duration="2703000" />
-      <workItem from="1747598092997" duration="3291000" />
+      <workItem from="1747598092997" duration="4856000" />
     </task>
     <task id="LOCAL-00001" summary="AAAAA">
       <option name="closed" value="true" />
@@ -114,7 +115,23 @@
       <option name="project" value="LOCAL" />
       <updated>1747598821033</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="CCCCCC">
+      <option name="closed" value="true" />
+      <created>1747602186490</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1747602186490</updated>
+    </task>
+    <task id="LOCAL-00004" summary="create-drop temp">
+      <option name="closed" value="true" />
+      <created>1747602233036</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1747602233036</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,6 +140,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="AAAAA" />
     <MESSAGE value="BBBBB" />
-    <option name="LAST_COMMIT_MESSAGE" value="BBBBB" />
+    <MESSAGE value="CCCCCC" />
+    <MESSAGE value="create-drop temp" />
+    <option name="LAST_COMMIT_MESSAGE" value="create-drop temp" />
   </component>
 </project>
