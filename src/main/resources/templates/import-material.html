@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8" />
+    <title>Import Materials - AI Classroom</title>
+
+    <link rel="stylesheet" th:href="@{/css/style1.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inria Sans', Arial, sans-serif;
+            background-color: #d9e8f5;
+        }
+        .container {
+            background-color: white;
+            max-width: 600px;
+            margin: 60px auto;
+            padding: 30px 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .custom-file-label {
+            display: inline-block;
+            background-color: #336699;
+            color: white;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            width: auto;
+            margin-bottom: 10px;
+        }
+
+        .custom-file-label:hover {
+            background-color: #274d70;
+        }
+
+        #file-name {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #333;
+            font-style: italic;
+            min-height: 20px;
+            text-align: center;
+            max-width: 100%;
+            word-wrap: break-word;
+        }
+
+        button.submit-btn {
+            background-color: #336699;
+            color: white;
+            padding: 12px 40px;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        button.submit-btn:hover {
+            background-color: #274d70;
+        }
+
+        a.btn.back-button {
+            display: inline-block;
+            background-color: rgba(100, 131, 162, 0.58);
+            color: white;
+            padding: 10px 18px;
+            font-size: 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        a.btn.back-button:hover {
+            background-color: #274d70;
+        }
+
+        .form-text {
+            font-size: 14px;
+            color: #555;
+            margin-top: 10px;
+            max-width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img th:src="@{/images/logo.png}" alt="Logo">
+        <h2>AI Classroom</h2>
+    </div>
+    <div class="menu">
+        <ul>
+            <li><a th:href="@{/}">Home</a></li>
+            <li><a th:href="@{/about}">About</a></li>
+
+            <!-- Greeting if logged in -->
+            <li th:if="${#authorization.expression('isAuthenticated()')}">
+                <span style="color:white">Hello, <strong th:text="${#authentication.name}">Username</strong></span>
+            </li>
+
+            <!-- Show login or logout accordingly -->
+            <li th:unless="${#authorization.expression('isAuthenticated()')}">
+                <a th:href="@{/login}">Log In</a>
+            </li>
+            <li th:if="${#authorization.expression('isAuthenticated()')}">
+                <a th:href="@{/logout}">Log Out</a>
+            </li>
+        </ul>
+    </div>
+</header>
+
+<div class="container">
+    <a th:href="@{'/subjects/' + ${subject.id} + '/materials'}" class="btn back-button">← Back to Materials</a>
+
+    <h2>Import Materials for <span th:text="${subject.subjectName}">Subject Name</span></h2>
+
+    <form th:action="@{'/subjects/' + ${subject.id} + '/materials/import'}" method="post" enctype="multipart/form-data">
+        <label for="materialFile" class="custom-file-label">Select .txt file to import</label>
+        <input type="file" id="materialFile" name="file" accept=".txt" required />
+        <div id="file-name"></div>
+        <div class="form-text">File format: Text file should start with "=== Title ===" followed by content</div>
+        <button type="submit" class="submit-btn">Import Materials</button>
+    </form>
+</div>
+
+<script>
+    const fileInput = document.getElementById('materialFile');
+    const fileNameDisplay = document.getElementById('file-name');
+
+    fileInput.addEventListener('change', () => {
+        fileNameDisplay.textContent = fileInput.files.length > 0 ? fileInput.files[0].name : '';
+    });
+</script>
+
+</body>
+</html>

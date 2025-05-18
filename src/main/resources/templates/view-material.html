@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${material.title} + ' - AIClassroom'">Material Title - AIClassroom</title>
+    <link rel="stylesheet" th:href="@{/css/style1.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inria Sans', sans-serif;
+            background-color: #d9e8f5;
+        }
+        .container {
+            background-color: white;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+            position: relative;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .content {
+            white-space: pre-wrap;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+        }
+        .action-buttons {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            display: flex;
+            gap: 15px;
+            z-index: 10;
+        }
+        .action-buttons a,
+        .action-buttons button {
+            background-color: #336699;
+            border: none;
+            color: white;
+            padding: 10px 16px;
+            font-size: 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+            white-space: nowrap;
+        }
+        .action-buttons a.btn-danger {
+            background-color: #d9534f;
+        }
+        .action-buttons a.btn-danger:hover {
+            background-color: #c9302c;
+        }
+        .action-buttons button:hover,
+        .action-buttons a:hover {
+            background-color: #274d70;
+        }
+        .back-button {
+            margin-bottom: 20px;
+            background-color: #666;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+        }
+        .back-button:hover {
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img th:src="@{/images/logo.png}" alt="Logo">
+        <h2>AI Classroom</h2>
+    </div>
+    <div class="menu">
+        <ul>
+            <li><a th:href="@{/}">Home</a></li>
+            <li><a th:href="@{/about}">About</a></li>
+
+            <!-- Show greeting if authenticated -->
+            <li th:if="${#authorization.expression('isAuthenticated()')}">
+                <span style="color:white">Hello, <strong th:text="${#authentication.name}">Username</strong></span>
+            </li>
+
+            <!-- Show Log In link if not authenticated -->
+            <li th:unless="${#authorization.expression('isAuthenticated()')}">
+                <a th:href="@{/login}">Log In</a>
+            </li>
+
+            <!-- Optional: Add logout link -->
+            <li th:if="${#authorization.expression('isAuthenticated()')}">
+                <a th:href="@{/logout}">Log Out</a>
+            </li>
+        </ul>
+    </div>
+</header>
+
+<div class="container">
+    <a th:href="@{/subjects/{id}/materials(id=${material.subject.id})}" class="back-button">← Back to Materials</a>
+
+    <div class="action-buttons">
+        <a th:href="@{'/subjects/' + ${material.id} + '/export-pdf'}" class="btn btn-danger">Export To PDF</a>
+        <a th:href="@{'/subjects/' + ${material.id} + '/generate-test'}" class="btn btn-primary">Generate-test</a>
+    </div>
+
+    <h1 th:text="${material.title}">Material Title</h1>
+    <div class="content" th:text="${material.content}">
+        Material content goes here...
+    </div>
+</div>
+
+</body>
+</html>

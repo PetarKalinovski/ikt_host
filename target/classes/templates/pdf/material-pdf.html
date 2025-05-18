@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Material PDF</title>
+  <style>
+        body { font-family: Arial, sans-serif; }
+        h1 { color: #333; }
+        p { font-size: 14px; }
+    </style>
+</head>
+<body>
+<h1 th:text="${title}">Material Title</h1>
+<p th:text="${content}">This is the material content.</p>
+</body>
+</html>

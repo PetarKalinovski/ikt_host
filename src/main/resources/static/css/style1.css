@@ -1,0 +1,378 @@
+/*   HEADER  */
+
+body{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: #DCE6EE;
+    font-family: 'Inria Sans', sans-serif;
+}
+
+header{
+    width: 100%;
+    height: 5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #80AED4;
+}
+.logo{
+    padding-left: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header img{
+    height: 5em;
+}
+.logo h2{
+    font-size: 3em;
+    color: white;
+}
+.menu{
+    padding-right: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+}
+.menu ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    list-style: none;
+}
+.menu ul li{
+    margin: 1em;
+}
+.menu ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.3em;
+}
+
+/* INDEX MAIN PART */
+
+main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 4em;
+}
+main img{
+    height: 12em;
+    width: 12em;
+}
+main h1{
+    color: #2B608C;
+    font-size: 3.2em;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+}
+main h2{
+    font-size: 1.9em;
+    margin-top: 0;
+    margin-bottom: 0.2em;
+    color: #2B81C8;
+    font-weight: lighter;
+}
+main button{
+    border: 1px solid white;
+    background-color: #2B608C;
+    color: white;
+    width: 12em;
+    height: 4.3em;
+    border-radius: 0.7em;
+    margin-top: 1.5em;
+}
+main button a{
+    color: white;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+/*  LOGIN PAGE  */
+
+.login-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 18em;               /* Increased from 15em to 18em to match your example */
+    background-color: white;   /* Added for card style */
+    padding: 2em;              /* Added padding */
+    border-radius: 1em;        /* Added rounded corners */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);  /* subtle shadow */
+}
+
+.login-form input{
+    width: 100%;
+    height: 3em;               /* fixed height to 3em for both username and password */
+    border-radius: 0.3em;
+    border: 2px solid #2B608C;
+    margin-bottom: 1.2em;      /* added spacing between inputs */
+    padding: 0 0.5em;          /* padding inside input */
+    box-sizing: border-box;    /* ensure padding doesn’t break width */
+}
+
+.login-form label{
+    color: #2B608C;
+    width: 100%;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 0.5em;      /* added margin below label */
+}
+
+.login-page-buttons{
+    width: 100%;
+    font-weight: bolder;
+}
+
+#create-button{
+    background-color: white;
+    color: #2B608C;
+    font-weight: bolder;
+    border: 2px solid #2B608C;
+    height: 3.2em;
+    border-radius: 0.5em;
+    margin-top: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#create-button:hover{
+    background-color: #f0f8ff;
+}
+
+#login-button{
+    background-color: #2B608C;
+    color: white;
+    border: none;
+    height: 3.2em;
+    border-radius: 0.5em;
+    margin-top: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#login-button:hover{
+    background-color: #1e4d72;
+}
+
+/*  SIGNUP PAGE  */
+
+.signup-main{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 2em;
+}
+
+.signup-form{
+    display: flex;
+    flex-direction: column;
+    margin-left: 5em;
+    width: 40em;
+    align-items: start;
+}
+
+#first-and-last-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+#radio-buttons{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+#first-name,
+#last-name,
+#email,
+#password,
+#repeat-password{
+    width: 20em;
+    height: 3.4em;
+    border: 2px solid #2B608C;
+    border-radius: 0.3em;
+}
+.signup-form label{
+    margin-top: 1.3em;
+    color: #2B608C;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+#first-name{
+    margin-right: 2em;
+}
+
+#radio-buttons div{
+    margin-top: 1.3em;
+    margin-right: 2em;
+}
+
+.signup-form button{
+    width: 20em;
+    font-weight: bolder;
+    margin-top: 3em;
+}
+
+#signup-image{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+}
+
+#create-button a{
+    color: #2B608C;
+    text-decoration: none;
+    font-size: 1.3em;
+}
+
+/*  ABOUT  */
+
+#about{
+    align-items: start;
+}
+
+#about h1{
+    margin-left: 2em;
+    margin-bottom: 0.7em;
+}
+#about div{
+    width: 50%;
+    color: #2B608C;
+    margin-left: 6em;
+    margin-bottom: 1em;
+}
+
+/* Style for the role select dropdown */
+.signup-form select,
+.login-form select {
+    width: 100%;
+    height: 3.2em;
+    border-radius: 0.3em;
+    border: 2px solid #2B608C;
+    background-color: white;
+    color: #2B608C;
+    font-size: 1em;
+    padding: 0 0.5em;
+    margin-top: 0.5em;
+    margin-bottom: 1.2em;
+    -webkit-appearance: none; /* removes default arrow in some browsers */
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+/* Optional: add a little arrow icon with background */
+.signup-form select {
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3e%3cpath fill='%232B608C' d='M0 0l5 6 5-6z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.7em center;
+    background-size: 10px 6px;
+}
+
+/* Registration success message */
+.registration-success {
+    background-color: #d4edda;  /* light green */
+    border: 1.5px solid #28a745; /* green border */
+    color: #155724; /* dark green text */
+    padding: 1em 1.5em;
+    margin-top: 1.5em;
+    border-radius: 0.5em;
+    font-weight: bold;
+    font-size: 1.2em;
+    box-shadow: 0 2px 6px rgba(40, 167, 69, 0.3);
+    text-align: center;
+    max-width: 400px;
+    margin-bottom: 15px;
+}
+
+/* Optional: make the link inside stand out */
+.registration-success a {
+    color: #28a745;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+.subjects-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 0 40px; /* similar padding to example */
+}
+
+.subject-card {
+    background-color: white;
+    border: 1px solid #c2d1e0;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.subject-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+}
+
+.subject-card h3 {
+    font-family: 'Inria Sans', sans-serif;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.subject-card p {
+    flex-grow: 1;
+    color: #555;
+    margin-bottom: 40px; /* more space for button */
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+/* Explore button in bottom-right corner */
+.explore-btn {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Inria Sans', sans-serif;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 32px;
+}
+
+.explore-btn:hover {
+    background-color: #2980b9;
+}
+

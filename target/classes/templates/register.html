@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" th:href="@{/css/style1.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img th:src="@{/images/logo.png}" alt="Logo">
+        <h2>AI Classroom</h2>
+    </div>
+    <div class="menu">
+        <ul>
+            <li><a th:href="@{/}">Home</a></li>
+            <li><a th:href="@{/about}">About</a></li>
+            <li><a th:href="@{/login}">Log In</a></li>
+        </ul>
+    </div>
+</header>
+
+<main>
+    <h2>Register</h2>
+
+    <div th:if="${param.success}" class="registration-success">
+        Registration successful! Please <a th:href="@{/login}">login</a>.
+    </div>
+
+    <form th:action="@{/register}" method="post" class="login-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="surname">Surname:</label>
+        <input type="text" id="surname" name="surname" required />
+
+        <label for="type">Role:</label>
+        <select id="type" name="type" required>
+            <option value="STUDENT">Student</option>
+            <option value="TEACHER">Teacher</option>
+        </select>
+
+        <button type="submit" id="register-button" class="login-page-buttons" style="margin-top:1em;">Register</button>
+    </form>
+</main>
+
+</body>
+</html>
